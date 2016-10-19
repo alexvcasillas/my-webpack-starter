@@ -8,6 +8,8 @@
 
 ### How do I get started with My Webpack Starter?
 
+First of all, it would be necessary to have (cpt. obvious' wisdom) `webpack` installed onto your computer if you still don't have it. You can make this happen running the following command in your console: `npm install webpack -g`. This will make *webpack* command to be available globaly (everywhere).
+
 To get started using **My Webpack Starter** you only need to clone this repository and run `npm install` to fetch all the *dependencies* which are the following:
 
 * babel-core: ^6.17.0
