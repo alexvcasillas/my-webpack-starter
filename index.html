@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>My Webpack Starter by alexvcasillas</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>My Webpack Starter</h1>
+        <p>This is the entry point for Webpack Starter Kit. If you need a starting point for Webpack ready to use, you may use this project.</p>
+
+        <p class="view"><a href="https://github.com/alexvcasillas/my-webpack-starter">View the Project on GitHub <small>alexvcasillas/my-webpack-starter</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/alexvcasillas/my-webpack-starter/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/alexvcasillas/my-webpack-starter/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/alexvcasillas/my-webpack-starter">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="my-webpack-starter" class="anchor" href="#my-webpack-starter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My Webpack Starter</h1>
+
+<p><strong>My Webpack Starter</strong> is a ready to use entry point to start developing <em>Javascript</em> Apps with <em>Webpack</em>.</p>
+
+<h3>
+<a id="what-does-my-webpack-starter-is-useful-for" class="anchor" href="#what-does-my-webpack-starter-is-useful-for" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What does My Webpack Starter is useful for?</h3>
+
+<p><strong>My Webpack Starter</strong> is useful to watch and compile changes while you develop your App or just to build and bundle your <em>Javascript</em> files.</p>
+
+<h3>
+<a id="how-do-i-get-started-with-my-webpack-starter" class="anchor" href="#how-do-i-get-started-with-my-webpack-starter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How do I get started with My Webpack Starter?</h3>
+
+<p>First of all, it would be necessary to have (cpt. obvious' wisdom) <code>webpack</code> installed onto your computer if you still don't have it. You can make this happen running the following command in your console: <code>npm install webpack -g</code>. This will make <em>webpack</em> command to be available globaly (everywhere).</p>
+
+<p>To get started using <strong>My Webpack Starter</strong> you only need to clone this repository and run <code>npm install</code> to fetch all the <em>dependencies</em> which are the following:</p>
+
+<ul>
+<li>babel-core: ^6.17.0</li>
+<li>babel-loader: ^6.2.5</li>
+<li>babel-plugin-transform-es2015-modules-commonjs: ^6.16.0</li>
+<li>babel-preset-es2015: ^6.16.0</li>
+<li>jshint: "^2.9.3</li>
+<li>jshint-loader: "^0.8.3</li>
+<li>webpack: "^1.13.2</li>
+<li>node-libs-browser: "^1.0.0</li>
+<li>strip-loader: ^0.1.2</li>
+</ul>
+
+<p>After you have downloaded all <em>dependencies</em> you only need to run two single commands to get started:</p>
+
+<p><code>npm run development</code>: This command will run <em>Webpack</em> in development mode, watching file changes while you work and linting all possible errors in your code.</p>
+
+<p><code>npm run production</code>: This command will run <em>Webpack</em> in production mode, which means it will grab your <em>App's Entry Point</em> and start transpiling it into valid <code>ECMAScript5</code> and including all your <code>imports</code> into one single bundled file.</p>
+
+<h3>
+<a id="how-do-i-change-my-apps-entry-point" class="anchor" href="#how-do-i-change-my-apps-entry-point" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How do I change my App's Entry Point?</h3>
+
+<p>By default, <strong>My Webpack Starter</strong> has the <em>App's Entry Point</em> at <code>app/app.js</code>. To change this entry point, you will have to open <code>webpack.config.js</code> and update the following line:</p>
+
+<p><code>entry: "./public/javascript/app.js", // Entry Point of the App</code></p>
+
+<p>Replace the path with your desired entry point of the App. Take note that this should be a relative position from the <code>webpack.config.js</code>.</p>
+
+<h3>
+<a id="what-if-i-dont-want-my-webpack-starter-lint-my-files-before-compiling" class="anchor" href="#what-if-i-dont-want-my-webpack-starter-lint-my-files-before-compiling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What if I don't want My Webpack Starter lint my files before compiling?</h3>
+
+<p>To achieve this (I'm not sure why wouldn't you want a not-linted code to prevent bugs or issues with new features) you will have to open <code>webpack.config.js</code> and just comment or remove (better to comment, just in case for future needs) the following code:</p>
+
+<pre><code>preLoaders: [
+  {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'jshint-loader'
+
+  }
+],
+</code></pre>
+
+<h3>
+<a id="what-if-i-want-to-add-more-cutting-edge-features-to-my-javascript-and-be-able-to-compile-them" class="anchor" href="#what-if-i-want-to-add-more-cutting-edge-features-to-my-javascript-and-be-able-to-compile-them" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What if I want to add more "cutting edge" features to my Javascript and be able to compile them?</h3>
+
+<p>Well, if you want this you will need to install new dependencies with <code>npm install --save-dev &lt;awesome-babel-preset-package&gt;</code> and then, go to <code>webpack.config.js</code> and edit the following line:</p>
+
+<p><code>presets: ['es2015'] // Presets for the Babel-Loader</code>.</p>
+
+<p>This line is an <code>Array</code> of all the presets you want <em>Webpack</em> to compile with to make the transpiling magic on your code, so, for example, if we wanted <code>es2016</code> and <code>es2017</code> presets for our code, the line will look like:</p>
+
+<p><code>presets: ['es2015', 'es2016', 'es2017'] // Presets for the Babel-Loader</code>.</p>
+
+<p>But that won't be all, you also need to go to the <code>.babelrc</code> file in the root of the project and modify it. The first time you open this file the code should look like (if is not, you have a problem):</p>
+
+<p><code>{ "presets": [ "es2015" ] }</code></p>
+
+<p>We need to do the same process as we did for our <code>webpack.config.js</code> and your <code>.babelrc</code> file should ended looking like this:</p>
+
+<p><code>{ "presets": [ "es2015", "es2016", "es2017" ] }</code></p>
+
+<p>And that would be everything you should now about <strong>Adding Cutting Edge Features</strong> to your Javascript.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/alexvcasillas">alexvcasillas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
